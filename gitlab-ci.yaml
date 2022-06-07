@@ -1,0 +1,5 @@
+export-pcb:
+  image: docker.io/setsoft/kicad_auto:dev_k6
+  steps:
+    - cd pcb
+    - kibot -vvv
