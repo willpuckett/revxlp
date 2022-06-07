@@ -15,5 +15,4 @@ export-plate:
     - kibot -vvv
   artifacts:
     paths:
-      - plate/JLCPCB/revxlp-JLCPCB.zip
-      - plate/revxlp_*.csv
+      - plate/JLCPCB/revxlp_plate-JLCPCB.zip
