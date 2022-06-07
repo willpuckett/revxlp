@@ -5,5 +5,5 @@ export-pcb:
     - kibot -vvv -c ../revxlp.kibot.yaml
   artifacts:
     paths:
-      - pcb/revxlp-JLCPCB.zip
+      - pcb/*JLCPCB.zip
       - pcb/revxlp_*.csv
