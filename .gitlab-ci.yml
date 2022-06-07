@@ -2,4 +2,4 @@ export-pcb:
   image: docker.io/setsoft/kicad_auto:dev_k6
   script:
     - cd pcb
-    - kibot -vvv
+    - kibot -vvv -c ../revxlp.kibot.yaml
