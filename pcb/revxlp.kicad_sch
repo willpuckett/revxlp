@@ -112,7 +112,7 @@
       (property "Value" "74HC595" (id 1) (at -7.62 -16.51 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Footprint" "" (id 2) (at 0 0 0)
+      (property "Footprint" "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" (id 2) (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" (id 3) (at 0 0 0)

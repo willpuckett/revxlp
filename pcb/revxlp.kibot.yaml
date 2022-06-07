@@ -125,11 +125,11 @@ outputs:
       ref_separator: ','
       group_fields: ['Value', 'Footprint', 'LCSC Part Number']
       columns:
-        - field: Values
+        - field: Value
           name: Comment
         - field: References
           name: Designator
-        - field: Footprints
+        - field: Footprint
           name: Footprint
         - field: 'LCSC Part Number'
           name: 'LCSC Part #'
