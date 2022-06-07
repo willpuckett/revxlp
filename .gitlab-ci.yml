@@ -2,8 +2,18 @@ export-pcb:
   image: docker.io/setsoft/kicad_auto:dev_k6
   script:
     - cd pcb
-    - kibot -vvv -c ../revxlp.kibot.yaml
+    - kibot -vvv
   artifacts:
     paths:
       - pcb/JLCPCB/revxlp-JLCPCB.zip
       - pcb/revxlp_*.csv
+
+export-plate:
+  image: docker.io/setsoft/kicad_auto:dev_k6
+  script:
+    - cd plate
+    - kibot -vvv
+  artifacts:
+    paths:
+      - plate/JLCPCB/revxlp-JLCPCB.zip
+      - plate/revxlp_*.csv
