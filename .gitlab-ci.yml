@@ -8,7 +8,7 @@ export-pcb:
       - pcb/JLCPCB/revxlp-JLCPCB.zip
       - pcb/revxlp_*.csv
 
-export-plate:
+export-switch-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
   script:
     - cd plate
@@ -16,3 +16,12 @@ export-plate:
   artifacts:
     paths:
       - plate/JLCPCB/revxlp_plate-JLCPCB.zip
+
+export-bottom-plate:
+  image: docker.io/setsoft/kicad_auto:dev_k6
+  script:
+    - cd bottom
+    - kibot -vvv
+  artifacts:
+    paths:
+      - bottom/JLCPCB/revxlp_bottom-JLCPCB.zip
