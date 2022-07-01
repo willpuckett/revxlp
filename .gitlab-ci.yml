@@ -1,4 +1,9 @@
+stages:
+  - export
+  - generate
+
 export-pcb:
+  stage: export
   image: docker.io/setsoft/kicad_auto:dev_k6
   script:
     - cd pcb
@@ -10,6 +15,7 @@ export-pcb:
 
 export-switch-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
+  stage: export
   script:
     - cd plate
     - kibot -vvv
@@ -19,9 +25,23 @@ export-switch-plate:
 
 export-bottom-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
+  stage: export
   script:
     - cd bottom
     - kibot -vvv
   artifacts:
     paths:
+      - bottom/revxlp_bottom-Edge_Cuts.dxf
       - bottom/JLCPCB/revxlp_bottom-JLCPCB.zip
+      - bottom/JLCPCB/revxlp_bottom-NPTH.drl
+
+generate-3dp-case:
+  image: cadquery/cadquery
+  stage: generate
+
+  script:
+    - REVXLP_DIR=$(pwd) python plate-case-export.py
+
+  artifacts:
+    paths:
+      - *.step

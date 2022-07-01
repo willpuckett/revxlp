@@ -5,6 +5,16 @@ kibot:
   version: 1
 
 outputs:
+  - name: Cuts_DXF
+    comment: Edge Cut DXF used for 3dp case generation
+    type: dxf
+    options:
+      metric_units: true
+      polygon_mode: false
+      use_aux_axis_as_origin: true
+    layers:
+      - Edge.Cuts
+
   - name: JLCPCB_gerbers
     comment: Gerbers compatible with JLCPCB
     type: gerber
@@ -29,15 +39,15 @@ outputs:
     layers:
       # Note: a more generic approach is to use 'copper' but then the filenames
       # are slightly different.
-      - B.Cu
+      - F.Cu
       - In1.Cu
       - In2.Cu
       - In3.Cu
       - In4.Cu
       - In5.Cu
       - In6.Cu
-      - B.SilkS
-      - B.Mask
+      - F.SilkS
+      - F.Mask
       - Edge.Cuts
 
   - name: JLCPCB_drill
