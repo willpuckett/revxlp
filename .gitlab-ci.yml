@@ -40,7 +40,9 @@ generate-3dp-case:
   stage: generate
 
   script:
-    - REVXLP_DIR=$(pwd) python plate-case-export.py
+    - ./plate-case-export.py
+    - ./plate-case-export.py --feature logo
+    - ./plate-case-export.py --feature button_cutouts
 
   artifacts:
     paths:

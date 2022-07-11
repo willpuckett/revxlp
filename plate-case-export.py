@@ -1,17 +1,34 @@
+#!/bin/env python
+
 # Load CQGI
 import cadquery.cqgi as cqgi
 import cadquery as cq
+import os
+import argparse
+import sys
+
+parser = argparse.ArgumentParser(prog='plate-case-export')
+parser.add_argument('--feature', '-f', action='append', choices=['logo', 'button_cutouts'])
+
+args = parser.parse_args(sys.argv[1:])
 
 # load the cadquery script
 model = cqgi.parse(open("plate-case.py").read())
 
+opts = {
+        'feature_button_cutouts': (not args.feature or "button_cutouts" in args.feature),
+        'feature_logo': (not args.feature or "logo" in args.feature),
+}
+
 # run the script and store the result (from the show_object call in the script)
-build_result = model.build()
+build_result = model.build(build_parameters = opts)
 
 # test to ensure the process worked.
 if build_result.success:
-    # loop through all the shapes returned and export to STEP
-    for i, result in enumerate(build_result.results):
-        cq.exporters.export(result.shape, f"plate_case_{i}.step")
+    *others,last = build_result.results
+
+    base_name = f"revxlp_case_{'_'.join(args.feature)}"
+    cq.exporters.export(last.shape, f"{base_name}.step")
+    cq.exporters.export(last.shape, f"{base_name}.stl")
 else:
     print(f"BUILD FAILED: {build_result.exception}")
