@@ -27,7 +27,7 @@ build_result = model.build(build_parameters = opts)
 if build_result.success:
     *others,last = build_result.results
 
-    base_name = f"revxlp_case_{'_'.join(args.feature or [])}"
+    base_name = f"revxlp_case_{'_'.join(args.feature or ['all'])}"
     cq.exporters.export(last.shape, f"{base_name}.step")
     cq.exporters.export(last.shape, f"{base_name}.stl")
 else:
