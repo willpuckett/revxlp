@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 
 # Load CQGI
 import cadquery.cqgi as cqgi
