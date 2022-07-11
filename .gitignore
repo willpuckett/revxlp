@@ -1,3 +1,5 @@
 *-bak
 *-cache
 *-backups/
+*.step
+*.stl
