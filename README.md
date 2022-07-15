@@ -52,7 +52,7 @@ The BOM for the revxlp is as follows:
 | Backlight MOSFET           | 1     | SOT-23    | AO3416                           | TODO    |
 | Backlight MOSFET Resistor  | 1     | 1206      | 4.7k Ω                           | TODO    |
 | Backlight LEDS             | 42    | PLL-2     | User selected color              | TODO    |
-| Backlight Resistors        | 42    | PLL-2     | See Backlighting calculator docs | TODO    |
+| Backlight Resistors        | 42    | 1206      | See Backlighting calculator docs | TODO    |
 | Case Standoff Solder Nuts  | 7     |           | Adafruit M3 x 3mm Solder Nuts    | TODO    |
 | Case Screws                | 7     |           | M3 x 6mm                         | TODO    |
 
