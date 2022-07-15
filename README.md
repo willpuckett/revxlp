@@ -68,8 +68,8 @@ The switch plate is exported two ways, one to be used for for JLC's Aluminum PCB
 
 You can download either
 
-* [Aluminum Switch Plate Gerbers]()
-* [FR4 Switch Plate Gerbers]()
+* [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-switch-plate)
+* [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-switch-plate)
 
 # Bottom Plate
 
