@@ -91,7 +91,7 @@ outputs:
       route_mode_for_oval_holes: false
       output: "%f%i.%x"
 
-  - name: JLCPCB_FR3
+  - name: JLCPCB_FR4
     comment: ZIP file for JLCPCB
     type: compress
     dir: JLCPCB
