@@ -39,22 +39,24 @@ that chip is completed.
 
 The BOM for the revxlp is as follows:
 
-| Description                | Count | Footprint | Value/MPN                        | Sources |
-| -------------------------- | ----- | --------- | -------------------------------- | ------- |
-| XIAO Compatible Controller | 1     | XIAO      | e.g. XIAO BLE, XIAO, XIAO RP2040 | TODO    |
-| Shift Register             | 1     | SOIC-16   | SN74HC595                        | TODO    |
-| Controller Sockets         | 2     |           | Mill Max TODO                    | TODO    |
-| Reset/Battery Pogo Pins    | 2     |           | Mill Max TODO                    | TODO    |
-| Kailh Choc Hotswap Sockets | 43    |           | CPG1350??? TODO                  | TODO    |
-| Kailh Choc v1 Switches     | 41/42 | N/A       | PG1350                           | TODO    |
-| Reset Button               | 1     |           | Alps SKSN                        | TODO    |
-| Power Switch               | 1     |           | PCM12                            | TODO    |
-| Backlight MOSFET           | 1     | SOT-23    | AO3416                           | TODO    |
-| Backlight MOSFET Resistor  | 1     | 1206      | 4.7k Ω                           | TODO    |
-| Backlight LEDS             | 42    | PLL-2     | User selected color              | TODO    |
-| Backlight Resistors        | 42    | 1206      | See Backlighting calculator docs | TODO    |
-| Case Standoff Solder Nuts  | 7     |           | Adafruit M3 x 3mm Solder Nuts    | TODO    |
-| Case Screws                | 7     |           | M3 x 6mm                         | TODO    |
+| Description                | Count | Footprint | Value/MPN                        | Sources                                                                                        |
+| -------------------------- | ----- | --------- | -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| XIAO Compatible Controller | 1     | XIAO      | e.g. XIAO BLE, XIAO, XIAO RP2040 | TODO                                                                                           |
+| Shift Register             | 1     | SOIC-16   | SN74HC595                        | TODO                                                                                           |
+| Controller Sockets         | 2     |           | Mill Max TODO                    | TODO                                                                                           |
+| Reset/Battery Pogo Pins    | 2     |           | Mill Max TODO                    | TODO                                                                                           |
+| Kailh Choc Hotswap Sockets | 43    |           | CPG1350??? TODO                  | TODO                                                                                           |
+| Kailh Choc v1 Switches     | 41/42 | N/A       | PG1350                           | TODO                                                                                           |
+| Reset Button               | 1     |           | Alps SKSN                        | TODO                                                                                           |
+| Power Switch               | 1     |           | PCM12                            | TODO                                                                                           |
+| JST Socket                 | 1     |           | SM02B-SRSS-TB(LF)(SN)            | TODO                                                                                           |
+| Battery                    | 1     | 350820    | 40mAh                            | https://tinycircuits.com/collections/batteries/products/lithium-ion-polymer-battery-3-7v-40mah |
+| Backlight MOSFET           | 1     | SOT-23    | AO3416                           | TODO                                                                                           |
+| Backlight MOSFET Resistor  | 1     | 1206      | 4.7k Ω                           | TODO                                                                                           |
+| Backlight LEDS             | 42    | PLL-2     | User selected color              | TODO                                                                                           |
+| Backlight Resistors        | 42    | 1206      | See Backlighting calculator docs | TODO                                                                                           |
+| Case Standoff Solder Nuts  | 7     |           | Adafruit M3 x 3mm Solder Nuts    | TODO                                                                                           |
+| Case Screws                | 7     |           | M3 x 6mm                         | TODO                                                                                           |
 
 # Switch Plate
 
