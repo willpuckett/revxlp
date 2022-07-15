@@ -1,0 +1,101 @@
+
+
+239mm x 95 mm
+
+# PCB
+
+The revxlp PCB supports hotswap sockets, two thumb layouts, and single color backlight per-key LEDs. It is a remix of the amazing [revlp]() by Cyril, who created it off the original [reviung41]()
+
+## Layouts
+
+The revxlp PCB supports 41 or 42 key layouts, with either a single 2u middle thumb, or dual 1u thumb keys.
+
+## Backlighting
+
+Single color LED backlighting is supported. If building yourself, choose the color PLL-2 LED you want to use, and calculate the desired resistor value based on the LED forward voltage and cucurrent.
+
+A jumper on the back of the PCB needs to be jumped, depending on if you want to power the LEDs from the raw 5v from USB, or the regulated 3.3v power source. For a build using the XIAO BLE, you might want to consider, this carefully; bridging to the 5v source means the LEDs will automatically be cut from power when USB is unplugged. If using 3.3v, you will likely deplete the tiny LiPo battery quickly w/ LEDs on *anyways*.
+
+## Controllers
+
+The revxlp is designed to use any controller designed to be Seeed Studio XIAO compatible. The two major families of controllers are the XIAO controllers from Seeed Studio, and the Adafruit Qt PY controllers.
+
+The current list of controllers, and their support status is as follows:
+
+
+| Controller              | Chip     | Features             | Status            |
+| ----------------------- | -------- | -------------------- | ----------------- |
+| XIAO                    | samd21   | USB                  | Supported         |
+| Adafruit Qt PY          | samd21   | USB                  | Supported         |
+| XIAO BLE                | nRF52840 | USB,BLE,LiPo Battery | Supported         |
+| XIAO RP2040             | nRF52840 | USB                  | Experimental      |
+| Adafruit Qt PY RP2040   | nRF52840 | USB                  | Experimental      |
+| XIAO ESP32-C3           | ESP32-C3 | USB,BLE,LiPo Battery | Not Yet Supported |
+| Adafruit Qt PY ESP32-C3 | ESP32-C3 | USB,BLE,LiPo Battery | Not Yet Supported |
+
+The ESP32-C3 based controllers will likely be supported in the future, as Zephyr/ZMK support for
+that chip is completed.
+
+## Bill Of Materials (BOM)
+
+The BOM for the revxlp is as follows:
+
+| Description                | Count | Footprint | Value/MPN                        | Sources |
+| -------------------------- | ----- | --------- | -------------------------------- | ------- |
+| XIAO Compatible Controller | 1     | XIAO      | e.g. XIAO BLE, XIAO, XIAO RP2040 | TODO    |
+| Controller Sockets         | 2     |           | Mill Max TODO                    | TODO    |
+| Reset/Battery Pogo Pins    | 2     |           | Mill Max TODO                    | TODO    |
+| Kailh Choc Hotswap Sockets | 43    |           | CPG1350??? TODO                  | TODO    |
+| Kailh Choc v1 Switches     | 41/42 | N/A       | PG1350                           | TODO    |
+| Reset Button               | 1     |           | Alps SKSN                        | TODO    |
+| Power Switch               | 1     |           | PCM12                            | TODO    |
+| Backlight MOSFET           | 1     | SOT-23    | AO3416                           | TODO    |
+| Backlight MOSFET Resistor  | 1     | 1206      | 4.7k Ω                           | TODO    |
+| Backlight LEDS             | 42    | PLL-2     | User selected color              | TODO    |
+| Backlight Resistors        | 42    | PLL-2     | See Backlighting calculator docs | TODO    |
+| Case Standoff Solder Nuts  | 7     |           | Adafruit M3 x 3mm Solder Nuts    | TODO    |
+| Case Screws                | 7     |           | M3 x 6mm                         | TODO    |
+
+# Switch Plate
+
+The switch plate is exported two ways, one to be used for for JLC's Aluminum PCBs, which are single sided silk, and the other for standard FR4 plates. When ordering either, be sure to use the following details:
+
+* Width: 239mm
+* Height: 95mm
+* Thickness: 1.2mm
+
+You can download either
+
+* [Aluminum Switch Plate Gerbers]()
+* [FR4 Switch Plate Gerbers]()
+
+# Bottom Plate
+
+The bottom plate can also be ordered in Aluminum or FR4. When ordering, use the following details:
+
+* Width: 239mm
+* Height: 95mm
+* Thickness: 1.2mm
+
+You can download either
+
+* [Aluminum Switch Plate Gerbers]()
+* [FR4 Switch Plate Gerbers]()
+
+# 3DP Bottom Case
+
+The 3DP bottom case is designed to work with the switch plate, and has a few optional features you can choose to have on the generate case or not:
+
+* Button cutouts - Cutouts are added along the top edge to access the power switch and reset buttons. If you don't need either, build the `logo` or `none` variants.
+* Logo - The Low Pro Galaxy, LLC logo is added as an inset on the bottom of the case. This should only be used if printing with something like resin. To skip the logo, use the `button_cutout` or `none` variants.
+ 
+Cases can be printed yourself, or ordered through an online service, including JLC if also getting PCBs/plates ordered. They are generated using CadQuery, and are available as STEP or STL files.
+
+* `all` variant, includes logo and button cutouts: [STEP]()/[STL]()
+* `logo` variant, includes logo, but *NO* button cutouts: [STEP]()/[STL]()
+* `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP]()/[STL]()
+* `none` variant, *NO* button cutouts, nor logo: [STEP]()/[STL]()
+
+# Build Guide
+
+TODO!
