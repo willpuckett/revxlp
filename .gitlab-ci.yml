@@ -21,7 +21,7 @@ export-switch-plate:
     - kibot -vvv
   artifacts:
     paths:
-      - plate/JLCPCB/revxlp_plate-JLCPCB.zip
+      - plate/JLCPCB/revxlp_plate-JLCPCB*.zip
 
 export-bottom-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
