@@ -22,7 +22,6 @@ The revxlp is designed to use any controller designed to be Seeed Studio XIAO co
 
 The current list of controllers, and their support status is as follows:
 
-
 | Controller              | Chip     | Features             | Status            |
 | ----------------------- | -------- | -------------------- | ----------------- |
 | XIAO                    | samd21   | USB                  | Supported         |
@@ -43,6 +42,7 @@ The BOM for the revxlp is as follows:
 | Description                | Count | Footprint | Value/MPN                        | Sources |
 | -------------------------- | ----- | --------- | -------------------------------- | ------- |
 | XIAO Compatible Controller | 1     | XIAO      | e.g. XIAO BLE, XIAO, XIAO RP2040 | TODO    |
+| Shift Register             | 1     | SOIC-16   | SN74HC595                        | TODO    |
 | Controller Sockets         | 2     |           | Mill Max TODO                    | TODO    |
 | Reset/Battery Pogo Pins    | 2     |           | Mill Max TODO                    | TODO    |
 | Kailh Choc Hotswap Sockets | 43    |           | CPG1350??? TODO                  | TODO    |
