@@ -47,3 +47,4 @@ generate-3dp-case:
   artifacts:
     paths:
       - "*.step"
+      - "*.stl"
