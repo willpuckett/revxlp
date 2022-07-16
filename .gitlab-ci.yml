@@ -32,7 +32,7 @@ export-bottom-plate:
   artifacts:
     paths:
       - bottom/revxlp_bottom-Edge_Cuts.dxf
-      - bottom/JLCPCB/revxlp_bottom-JLCPCB.zip
+      - bottom/JLCPCB/revxlp_bottom-JLCPCB*.zip
       - bottom/JLCPCB/revxlp_bottom-NPTH.drl
 
 generate-3dp-case:
