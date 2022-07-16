@@ -5,6 +5,14 @@ kibot:
   version: 1
 
 outputs:
+  - name: Cuts_DXF
+    comment: Edge Cut DXF used for 3dp case generation
+    type: dxf
+    options:
+      metric_units: true
+      polygon_mode: false
+      use_aux_axis_as_origin: true
+
   - name: JLCPCB_alu_gerbers
     comment: Gerbers compatible with JLCPCB (1.2mm Alu)
     type: gerber
