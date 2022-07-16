@@ -6,7 +6,7 @@ import csv
 file_dir = os.environ.get("REVXLP_DIR") or os.getcwd()
 
 plate_thickness = 2
-pcb_wiggle_room = 0.5
+pcb_wiggle_room = 0.75
 
 pcb_thickness = 1.8
 bottom_component_gap = 2
