@@ -61,9 +61,7 @@ The BOM for the revxlp is as follows:
 
 The following files are available as open source hardware (OSH) for folks to produce. They are all released unde the MIT license, like the originals they are based on.
 
-If you get any of these made, and are financially able to, please consider sponsoring me using the "Open Source Hardware Love" one-time tier on my [GitHub Sponsorship Page](https://github.com/sponsors/petejohanson):
-
-<iframe src="https://github.com/sponsors/petejohanson/button" title="Sponsor petejohanson" height="35" width="116" style="border: 0;"></iframe>
+If you get any of these made, and are financially able to, please consider sponsoring me using the "Open Source Hardware Love" one-time tier on my [GitHub Sponsorship Page](https://github.com/sponsors/petejohanson).
 
 ## PCB
 
