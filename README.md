@@ -21,15 +21,15 @@ The revxlp is designed to use any controller designed to be Seeed Studio XIAO co
 
 The current list of controllers, and their support status is as follows:
 
-| Controller              | Chip     | Features             | Status            |
-| ----------------------- | -------- | -------------------- | ----------------- |
-| XIAO                    | samd21   | USB                  | Supported         |
-| Adafruit Qt PY          | samd21   | USB                  | Supported         |
-| XIAO BLE                | nRF52840 | USB,BLE,LiPo Battery | Supported         |
-| XIAO RP2040             | nRF52840 | USB                  | Experimental      |
-| Adafruit Qt PY RP2040   | nRF52840 | USB                  | Experimental      |
-| XIAO ESP32-C3           | ESP32-C3 | USB,BLE,LiPo Battery | Not Yet Supported |
-| Adafruit Qt PY ESP32-C3 | ESP32-C3 | USB,BLE,LiPo Battery | Not Yet Supported |
+| Controller              | Chip     | Features             | Status                                                         |
+| ----------------------- | -------- | -------------------- | -------------------------------------------------------------- |
+| XIAO                    | samd21   | USB                  | Supported                                                      |
+| Adafruit Qt PY          | samd21   | USB                  | Supported                                                      |
+| XIAO BLE                | nRF52840 | USB,BLE,LiPo Battery | Supported                                                      |
+| XIAO RP2040             | nRF52840 | USB                  | [Experimental](https://github.com/zmkfirmware/zmk/issues/1085) |
+| Adafruit Qt PY RP2040   | nRF52840 | USB                  | [Experimental](https://github.com/zmkfirmware/zmk/issues/1085) |
+| XIAO ESP32-C3           | ESP32-C3 | USB,BLE,LiPo Battery | Not Yet Supported                                              |
+| Adafruit Qt PY ESP32-C3 | ESP32-C3 | USB,BLE,LiPo Battery | Not Yet Supported                                              |
 
 The ESP32-C3 based controllers will likely be supported in the future, as Zephyr/ZMK support for
 that chip is completed.
