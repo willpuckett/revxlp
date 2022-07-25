@@ -41,6 +41,7 @@ generate-3dp-case:
 
   script:
     - ./plate-case-export.py
+    - ./plate-case-export.py --feature base
     - ./plate-case-export.py --feature logo
     - ./plate-case-export.py --feature button_cutouts
 

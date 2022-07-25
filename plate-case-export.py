@@ -8,7 +8,7 @@ import argparse
 import sys
 
 parser = argparse.ArgumentParser(prog='plate-case-export')
-parser.add_argument('--feature', '-f', action='append', choices=['logo', 'button_cutouts'])
+parser.add_argument('--feature', '-f', action='append', choices=['base', 'logo', 'button_cutouts'])
 
 args = parser.parse_args(sys.argv[1:])
 

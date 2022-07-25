@@ -115,7 +115,7 @@ Cases can be printed yourself, or ordered through an online service, including J
 * `all` variant, includes logo and button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.stl?job=generate-3dp-case)
 * `logo` variant, includes logo, but *NO* button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.stl?job=generate-3dp-case)
 * `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.stl?job=generate-3dp-case)
-* `none` variant, *NO* button cutouts, nor logo: [STEP]()/[STL]()
+* `base` variant, *NO* button cutouts, nor logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_base.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_base.stl?job=generate-3dp-case)
 
 # Build Guide
 
