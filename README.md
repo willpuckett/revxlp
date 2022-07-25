@@ -1,10 +1,9 @@
 
+# revxlp Overview
 
-239mm x 95 mm
+![revxlp](revxlp.jpg)
 
-# PCB
-
-The revxlp PCB supports hotswap sockets, two thumb layouts, and single color backlight per-key LEDs. It is a remix of the amazing [revlp]() by Cyril, who created it off the original [reviung41]()
+The revxlp is a 41/42 key low profile (choc v1), unibody split, keyboard, supporting hotswap sockets, two thumb layouts, and single color backlight per-key LEDs. It is a remix of the amazing [revlp](https://github.com/cyril279/keyboards/tree/main/revlp) by Cyril, who created it off the original [reviung41](https://github.com/gtips/reviung/tree/master/reviung41) by gtips.
 
 ## Layouts
 
@@ -12,7 +11,7 @@ The revxlp PCB supports 41 or 42 key layouts, with either a single 2u middle thu
 
 ## Backlighting
 
-Single color LED backlighting is supported. If building yourself, choose the color PLL-2 LED you want to use, and calculate the desired resistor value based on the LED forward voltage and cucurrent.
+Single color LED backlighting is supported. It does *NOT* support per-key RGB. If building yourself, choose the color PLL-2 LED you want to use, and calculate the desired resistor value based on the LED forward voltage and cucurrent.
 
 A jumper on the back of the PCB needs to be jumped, depending on if you want to power the LEDs from the raw 5v from USB, or the regulated 3.3v power source. For a build using the XIAO BLE, you might want to consider, this carefully; bridging to the 5v source means the LEDs will automatically be cut from power when USB is unplugged. If using 3.3v, you will likely deplete the tiny LiPo battery quickly w/ LEDs on *anyways*.
 
@@ -58,7 +57,29 @@ The BOM for the revxlp is as follows:
 | Case Standoff Solder Nuts  | 7     |           | Adafruit M3 x 3mm Solder Nuts    | TODO                                                                                           |
 | Case Screws                | 7     |           | M3 x 6mm                         | TODO                                                                                           |
 
-# Switch Plate
+# Production Files
+
+The following files are available as open source hardware (OSH) for folks to produce. They are all released unde the MIT license, like the originals they are based on.
+
+If you get any of these made, and are financially able to, please consider sponsoring me using the "Open Source Hardware Love" one-time tier on my [GitHub Sponsorship Page](https://github.com/sponsors/petejohanson):
+
+<iframe src="https://github.com/sponsors/petejohanson/button" title="Sponsor petejohanson" height="35" width="116" style="border: 0;"></iframe>
+
+## PCB
+
+revxlp PCBs can be made at any of the common services, e.g. [JLC](https://jlcpcb.com/), [AllPCB](https://www.allpcb.com/), etc.
+
+When ordering, you'll want to use the following details:
+
+* Width: 239mm
+* Height: 95mm
+* Thickness: 1.6mm
+
+You'll need the following download:
+
+* [revxlp PCB Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/pcb/JLCPCB/revxlp-JLCPCB.zip?job=export-pcb)
+
+## Switch Plate
 
 The switch plate is exported two ways, one to be used for for JLC's Aluminum PCBs, which are single sided silk, and the other for standard FR4 plates. When ordering either, be sure to use the following details:
 
@@ -71,7 +92,7 @@ You can download either
 * [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-switch-plate)
 * [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-switch-plate)
 
-# Bottom Plate
+## Bottom Plate
 
 The bottom plate can also be ordered in Aluminum or FR4. When ordering, use the following details:
 
@@ -84,18 +105,18 @@ You can download either
 * [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-bottom-plate)
 * [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-bottom-plate)
 
-# 3DP Bottom Case
+## 3DP Bottom Case
 
-The 3DP bottom case is designed to work with the switch plate, and has a few optional features you can choose to have on the generate case or not:
+The 3DP bottom case is designed to work with the switch plate, and has a few optional features you can choose to include for the generate case:
 
 * Button cutouts - Cutouts are added along the top edge to access the power switch and reset buttons. If you don't need either, build the `logo` or `none` variants.
 * Logo - The Low Pro Galaxy, LLC logo is added as an inset on the bottom of the case. This should only be used if printing with something like resin. To skip the logo, use the `button_cutout` or `none` variants.
  
 Cases can be printed yourself, or ordered through an online service, including JLC if also getting PCBs/plates ordered. They are generated using CadQuery, and are available as STEP or STL files.
 
-* `all` variant, includes logo and button cutouts: [STEP]()/[STL]()
-* `logo` variant, includes logo, but *NO* button cutouts: [STEP]()/[STL]()
-* `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP]()/[STL]()
+* `all` variant, includes logo and button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.stl?job=generate-3dp-case)
+* `logo` variant, includes logo, but *NO* button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.stl?job=generate-3dp-case)
+* `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.stl?job=generate-3dp-case)
 * `none` variant, *NO* button cutouts, nor logo: [STEP]()/[STL]()
 
 # Build Guide
