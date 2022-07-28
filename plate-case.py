@@ -29,10 +29,10 @@ feature_logo = True
 
 feature_button_cutouts = True
 
-feature_bottom_chamfer = False
+feature_chamfer_outside = False
 chamfer_size = 1
 
-feature_bottom_fillet = True
+feature_fillet_outside = True
 fillet_size = 1
 
 def pnp_locations():
@@ -72,14 +72,12 @@ def logo_text_dxf():
     
 core_body = edge_cuts().offset2D(plate_thickness + pcb_wiggle_room, 'intersection').extrude(interior_height + plate_thickness)
 
-hulled_body = core_body.cut(edge_cuts().offset2D(pcb_wiggle_room).extrude(interior_height).translate([0,0,plate_thickness]))
+if feature_chamfer_outside:
+    core_body = core_body.faces("<Z or >Z").chamfer(chamfer_size)
+elif feature_fillet_outside:
+    core_body = core_body.faces("<Z or > Z").fillet(fillet_size)
 
-body = hulled_body
-
-if feature_bottom_chamfer:
-    body = body.faces("<Z").chamfer(chamfer_size)
-elif feature_bottom_fillet:
-    body = body.faces("<Z").fillet(fillet_size)
+body = core_body.cut(edge_cuts().offset2D(pcb_wiggle_room).extrude(interior_height).translate([0,0,plate_thickness]))
 
 # Only drills from the bottom PCB design are for the screw holes, so use those to drill out screw hole spots as well
 body = body.faces("<Z").pushPoints(drill_points()).circle(screw_hole_diameter / 2).cutThruAll()
@@ -95,8 +93,10 @@ if feature_button_cutouts:
     power_switch = pnp['SW1']
     power_point = (float(power_switch['Mid X']), float(power_switch['Mid Y']))
     
+    faces = body.faces(">Y[-2]")
+    
     # Face selection is a bit fiddly, we need *almost* the farthest face w/ a positive Y normal.
-    body = body.faces(">Y[-2]").workplane().pushPoints([(reset_btn_point[0],plate_thickness + bottom_component_gap), (power_point[0],plate_thickness + bottom_component_gap)]).rect(6,4).cutThruAll(True, -45)
+    body = faces.workplane().pushPoints([(reset_btn_point[0],plate_thickness + bottom_component_gap), (power_point[0],plate_thickness + bottom_component_gap)]).rect(6,4).cutThruAll(True, -25)
 
 if feature_logo:
     bottom_center = body.faces("<Z").val().Center()
