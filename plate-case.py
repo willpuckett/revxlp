@@ -71,16 +71,19 @@ def logo_text_dxf():
     )
     
 core_body = edge_cuts().offset2D(plate_thickness + pcb_wiggle_room, 'intersection').extrude(interior_height + plate_thickness)
-huller = edge_cuts().offset2D(pcb_wiggle_room).extrude(interior_height + 1).translate([0,0,plate_thickness])
 
 if feature_chamfer_outside:
     core_body = core_body.faces("<Z or >Z").chamfer(chamfer_size)
-    huller = huller.faces("<Z").chamfer(chamfer_size)
 elif feature_fillet_outside:
     core_body = core_body.faces("<Z or > Z").fillet(fillet_size)
-    huller = huller.faces("<Z").fillet(fillet_size)
 
+huller = edge_cuts().offset2D(pcb_wiggle_room).extrude(interior_height + 1).translate([0,0,plate_thickness])
 body = core_body.cut(huller)
+
+if feature_chamfer_outside:
+    body = body.faces(">Z[-2]").chamfer(chamfer_size)
+elif feature_fillet_outside:
+    body = body.faces(">Z[-2]").fillet(fillet_size)
 
 # Only drills from the bottom PCB design are for the screw holes, so use those to drill out screw hole spots as well
 body = body.faces("<Z").pushPoints(drill_points()).circle(screw_hole_diameter / 2).cutThruAll()
