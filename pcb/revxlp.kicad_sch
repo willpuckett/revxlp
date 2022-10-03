@@ -3996,7 +3996,7 @@
     (uuid 00000000-0000-0000-0000-0000608d2db9)
     (property "Reference" "SW2" (id 0) (at 259.08 129.921 0))
     (property "Value" "SW_Push" (id 1) (at 259.08 132.2324 0))
-    (property "Footprint" "revxlp:alps_sksn" (id 2) (at 259.08 132.08 0)
+    (property "Footprint" "Button_Switch_SMD:Panasonic_EVQPUL_EVQPUC" (id 2) (at 259.08 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 259.08 132.08 0)
@@ -7074,7 +7074,7 @@
       (reference "SW1") (unit 1) (value "SW_SPDT") (footprint "revxlp:switch_SSSS811101")
     )
     (path "/00000000-0000-0000-0000-0000608d2db9"
-      (reference "SW2") (unit 1) (value "SW_Push") (footprint "revxlp:alps_sksn")
+      (reference "SW2") (unit 1) (value "SW_Push") (footprint "Button_Switch_SMD:Panasonic_EVQPUL_EVQPUC")
     )
     (path "/00000000-0000-0000-0000-0000604dd518"
       (reference "SwA0") (unit 1) (value "SW_Push") (footprint "revxlp:PG1350_socket_smdLed")
