@@ -8,19 +8,21 @@ file_dir = os.environ.get("REVXLP_DIR") or os.getcwd()
 plate_thickness = 2
 pcb_wiggle_room = 0.25
 
-pcb_thickness = 1.8
-bottom_component_gap = 2
+pcb_thickness = 1.6
+solder_nut_height = 3
 pcb_to_switch_plate_gap = 1
 switch_plate_thickness = 1.2
+height_buffer = 0.5
 
 interior_height = (
-    bottom_component_gap +
+    solder_nut_height +
     pcb_thickness +
     pcb_to_switch_plate_gap +
-    switch_plate_thickness
+    switch_plate_thickness +
+    height_buffer
 )
 
-screw_hole_diameter = 3.2
+screw_hole_diameter = 4
 
 bottom_logo_depth = 0.5
 
@@ -73,17 +75,17 @@ def logo_text_dxf():
 core_body = edge_cuts().offset2D(plate_thickness + pcb_wiggle_room, 'intersection').extrude(interior_height + plate_thickness)
 
 if feature_chamfer_outside:
-    core_body = core_body.faces("<Z or >Z").chamfer(chamfer_size)
+    core_body = core_body.faces("<Z or >Z").chamfer(plate_thickness)
 elif feature_fillet_outside:
-    core_body = core_body.faces("<Z or > Z").fillet(fillet_size)
+    core_body = core_body.faces("<Z or > Z").fillet(plate_thickness)
 
 huller = edge_cuts().offset2D(pcb_wiggle_room).extrude(interior_height + 1).translate([0,0,plate_thickness])
 body = core_body.cut(huller)
 
 if feature_chamfer_outside:
-    body = body.faces(">Z[-2]").chamfer(chamfer_size)
+    body = body.faces(">Z[-2]").chamfer(plate_thickness * 0.5)
 elif feature_fillet_outside:
-    body = body.faces(">Z[-2]").fillet(fillet_size)
+    body = body.faces(">Z[-2]").fillet(plate_thickness * 0.5)
 
 # Only drills from the bottom PCB design are for the screw holes, so use those to drill out screw hole spots as well
 body = body.faces("<Z").pushPoints(drill_points()).circle(screw_hole_diameter / 2).cutThruAll()
@@ -102,7 +104,7 @@ if feature_button_cutouts:
     faces = body.faces(">Y[-2]")
     
     # Face selection is a bit fiddly, we need *almost* the farthest face w/ a positive Y normal.
-    body = faces.workplane().pushPoints([(reset_btn_point[0],plate_thickness + bottom_component_gap), (power_point[0],plate_thickness + bottom_component_gap)]).rect(6,4).cutThruAll(True, -25)
+    body = faces.workplane().pushPoints([(reset_btn_point[0],plate_thickness + solder_nut_height), (power_point[0],plate_thickness + solder_nut_height)]).rect(10,4).cutThruAll(True, -45)
 
 if feature_logo:
     bottom_center = body.faces("<Z").val().Center()
