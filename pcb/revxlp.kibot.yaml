@@ -8,12 +8,15 @@ filters:
   - name: fix_rotation
     comment: 'Adjust rotation for JLC'
     type: rot_footprint
-    negative_bottom: true
+    negative_bottom: false
+    invert_bottom: true
     rotations:
-      - ["^LED_WS2812B_PLCC.*", 180.0]
-      - ["^SMDIP-4.*", 180.0]
+      - ["^SOIC-16*", 270.0]
       - ["^SOT-23", 0.0]
+      - ["^SW_SPDT_PCM12", 180.0]
+      - ["^Panasonic_EVQPUL_.*", 90.0]
       - ["^D_.*", 180.0]
+      - ["^R_.*", 180.0]
 
   - name: only_jlc_parts
     comment: 'Only parts with JLC code'
@@ -22,12 +25,33 @@ filters:
       - column: 'LCSC Part Number'
         regex: '^C\d+'
 
+  - name: mechanical_fixed
+    comment: 'Exclude mechanical, but fix for reverse mount LED'
+    type: generic
+    exclude_virtual: true
+    exclude_any:
+      - column: 'Ref'
+        regex: '^TP[0-9]*'
+      - column: 'Ref'
+        regex: '^FID'
+      - column: 'Part'
+        regex: 'solder.*bridge'
+      - column: 'Part'
+        regex: 'solder.*jump'
+      - column: 'Part'
+        regex: 'test.*point'
+      - column: 'FP'
+        regex: 'test.*point'
+      - column: 'FP'
+        regex: 'fiducial'
+
 variants:
   - name: rotated
     comment: 'Just a place holder for the rotation filter'
     type: kibom
     variant: rotated
     pre_transform: fix_rotation
+    exclude_filter: mechanical_fixed
 
 outputs:
   - name: JLCPCB_gerbers
