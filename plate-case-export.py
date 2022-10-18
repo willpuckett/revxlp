@@ -16,6 +16,7 @@ args = parser.parse_args(sys.argv[1:])
 model = cqgi.parse(open("plate-case.py").read())
 
 opts = {
+        'assembly_generation': False,
         'feature_button_cutouts': (not args.feature or "button_cutouts" in args.feature),
         'feature_logo': (not args.feature or "logo" in args.feature),
 }
@@ -25,10 +26,10 @@ build_result = model.build(build_parameters = opts)
 
 # test to ensure the process worked.
 if build_result.success:
-    *others,last = build_result.results
+    item = next(filter(lambda res: res.options['case'], build_result.results))
 
     base_name = f"revxlp_case_{'_'.join(args.feature or ['all'])}"
-    cq.exporters.export(last.shape, f"{base_name}.step")
-    cq.exporters.export(last.shape, f"{base_name}.stl")
+    cq.exporters.export(item.shape, f"{base_name}.step")
+    cq.exporters.export(item.shape, f"{base_name}.stl")
 else:
     print(f"BUILD FAILED: {build_result.exception}")
