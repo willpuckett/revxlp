@@ -122,7 +122,7 @@ if feature_button_cutouts:
     
     body = (
         faces.workplane()
-        .pushPoints([(reset_btn_point[0], plate_thickness + solder_nut_height/2), (power_point[0], plate_thickness + solder_nut_height/2)]).rect(9,solder_nut_height * 1.5)
+        .pushPoints([(reset_btn_point[0], plate_thickness + solder_nut_height/2), (power_point[0], plate_thickness + solder_nut_height/2)]).rect(8,solder_nut_height)
         .cutThruAll(True, -45)
     )
 
