@@ -120,3 +120,7 @@ Cases can be printed yourself, or ordered through an online service, including J
 # Build Guide
 
 TODO!
+
+## Firmware
+
+Latest firmware can be found at https://github.com/petejohanson/revxlp-config
