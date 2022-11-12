@@ -34,6 +34,7 @@ export-bottom-plate:
       - bottom/revxlp_bottom-Edge_Cuts.dxf
       - bottom/JLCPCB/revxlp_bottom-JLCPCB*.zip
       - bottom/JLCPCB/revxlp_bottom-NPTH.drl
+      - bottom/revxlp_bottom_*.csv
 
 generate-3dp-case:
   image: cadquery/cadquery
