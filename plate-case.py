@@ -24,7 +24,7 @@ interior_height = (
     height_buffer
 )
 
-screw_hole_diameter = 4
+screw_hole_diameter = 3
 
 bottom_logo_depth = 0.5
 
@@ -37,9 +37,9 @@ feature_chamfer_outside = False
 feature_fillet_outside = True
 
 def generate_solder_nut(height):
-    main = cq.Workplane("XY").circle(5.56/2).extrude(height)
-    with_nub = main.faces(">Z").circle(4.9/2).extrude(1.53)
-    nut = with_nub.faces(">Z").hole(diameter=3)
+    main = cq.Workplane("XY").circle(4.56/2).extrude(height)
+    with_nub = main.faces(">Z").circle(3.9/2).extrude(1.53)
+    nut = with_nub.faces(">Z").hole(diameter=2)
     
     nut.faces("<Z").tag("bottom")
     nut.faces(">Z[-2]").tag("rim")
