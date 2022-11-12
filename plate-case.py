@@ -28,6 +28,9 @@ screw_hole_diameter = 3
 
 bottom_logo_depth = 0.5
 
+# For 3M SJ5382
+bumpon_width = 6.4
+
 # Possible optional features
 feature_logo = True
 
@@ -35,6 +38,8 @@ feature_button_cutouts = True
 
 feature_chamfer_outside = False
 feature_fillet_outside = True
+
+feature_bumpon_insets = True
 
 def generate_solder_nut(height):
     main = cq.Workplane("XY").circle(4.56/2).extrude(height)
@@ -48,7 +53,6 @@ def generate_solder_nut(height):
 def pcb_step():
     return cq.importers.importStep(f'{file_dir}/pcb/revxlp.step')
 
-
 def plate_pcb_step():
     return cq.importers.importStep(f'{file_dir}/plate/revxlp_plate.step')
 
@@ -56,7 +60,12 @@ def pnp_locations():
     with open(f"{file_dir}/pcb/revxlp_cpl_jlc.csv") as file:
         reader = csv.DictReader(file)
         return dict([(x['Designator'],x) for x in reader])
-        
+
+def bottom_pnp_locations():
+    with open(f"{file_dir}/bottom/revxlp_bottom_cpl_jlc.csv") as file:
+        reader = csv.DictReader(file)
+        return dict([(x['Designator'],x) for x in reader])
+
 def drill_points():
     file = open(f"{file_dir}/bottom/JLCPCB/revxlp_bottom-NPTH.drl", 'r')
     regex = re.compile("^X(-?\d+.\d+)Y(-?\d+.\d+)")
@@ -102,6 +111,13 @@ elif feature_fillet_outside:
     body = body.faces(">Z[-2]").fillet(plate_thickness * 0.5)
 
 body.faces(">Z[-2]").tag("interior_bottom")
+
+if feature_bumpon_insets:
+    locs = bottom_pnp_locations().values()
+    bumpons = [(float(val['Mid X']), float(val['Mid Y'])) for val in bottom_pnp_locations().values() if val['Package'] == 'Bumpon']
+
+    bumpon_bodies = cq.Workplane("XY").pushPoints(bumpons).circle((bumpon_width * 1.1)/2).extrude(1)
+    body = body.cut(bumpon_bodies)
 
 # Only drills from the bottom PCB design are for the screw holes, so use those to drill out screw hole spots as well
 body = body.faces("<Z").pushPoints(drill_points()).circle(screw_hole_diameter / 2).cutThruAll()

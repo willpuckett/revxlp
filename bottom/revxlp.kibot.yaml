@@ -5,6 +5,29 @@ kibot:
   version: 1
 
 outputs:
+  - name: JLCPCB_position
+    comment: Pick and place position file compatible with JLCPCB
+    type: position
+    options:
+      output: '%f_cpl_jlc.%x'
+      format: CSV
+      units: millimeters
+      separate_files_for_front_and_back: false
+      only_smd: false
+      inclued_virtual: true
+      columns:
+        - id: Ref
+          name: Designator
+        - Val
+        - Package
+        - id: PosX
+          name: "Mid X"
+        - id: PosY
+          name: "Mid Y"
+        - id: Rot
+          name: Rotation
+        - id: Side
+          name: Layer
   - name: Cuts_DXF
     comment: Edge Cut DXF used for 3dp case generation
     type: dxf
