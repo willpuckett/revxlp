@@ -12,6 +12,7 @@ export-pcb:
     paths:
       - pcb/JLCPCB/revxlp-JLCPCB.zip
       - pcb/revxlp_*.csv
+      - pcb/revxlp*.dxf
 
 export-switch-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
