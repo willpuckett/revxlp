@@ -52,7 +52,7 @@ generate-3dp-case:
       - "*.stl"
 
 generate-case-foam:
-  image: python
+  image: python:3-alpine
   stage: generate
   needs:
     - export-bottom-plate
