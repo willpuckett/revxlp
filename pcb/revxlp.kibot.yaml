@@ -54,6 +54,16 @@ variants:
     exclude_filter: mechanical_fixed
 
 outputs:
+  - name: CaseFoam_DXF
+    comment: Edge Cut DXF used for case foam generation
+    type: dxf
+    options:
+      metric_units: true
+      polygon_mode: false
+      use_aux_axis_as_origin: true
+    layers:
+       - User.Eco1
+
   - name: JLCPCB_gerbers
     comment: Gerbers compatible with JLCPCB
     type: gerber

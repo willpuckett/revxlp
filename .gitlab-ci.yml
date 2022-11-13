@@ -50,3 +50,20 @@ generate-3dp-case:
     paths:
       - "*.step"
       - "*.stl"
+
+generate-case-foam:
+  image: python
+  stage: generate
+  needs:
+    - export-bottom-plate
+    - export-pcb
+
+  before_script:
+    - pip install ezdxf
+
+  script:
+    - ./case-foam-dxf-merge.py
+
+  artifacts:
+    paths:
+      - "revxlp-case-foam.dxf"
