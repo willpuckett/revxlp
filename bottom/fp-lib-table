@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "revxlp")(type "KiCad")(uri "/home/peter/git/revxlp/revxlp.pretty")(options "")(descr ""))
+)
