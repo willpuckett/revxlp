@@ -2,69 +2,109 @@ stages:
   - export
   - generate
 
-export-pcb:
+.export-pcb:
   stage: export
   image: docker.io/setsoft/kicad_auto:dev_k6
   script:
-    - cd pcb
+    - cd ${VERSION}/pcb
     - kibot -vvv
   artifacts:
     paths:
-      - pcb/JLCPCB/revxlp-JLCPCB.zip
-      - pcb/revxlp_*.csv
-      - pcb/revxlp*.dxf
+      - ${VERSION}/pcb/JLCPCB/revxlp-JLCPCB.zip
+      - ${VERSION}/pcb/revxlp_*.csv
+      - ${VERSION}/pcb/revxlp*.dxf
 
-export-switch-plate:
+export-12u-pcb:
+  extends: .export-pcb
+  variables:
+    VERSION: 12u
+
+export-10u-pcb:
+  extends: .export-pcb
+  variables:
+    VERSION: 10u
+
+.export-switch-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
   stage: export
   script:
-    - cd plate
+    - cd ${VERSION}/plate
     - kibot -vvv
   artifacts:
     paths:
-      - plate/JLCPCB/revxlp_plate-JLCPCB*.zip
+      - ${VERSION}/plate/JLCPCB/revxlp_plate-JLCPCB*.zip
 
-export-bottom-plate:
+export-12u-switch-plate:
+  extends: .export-switch-plate
+  variables:
+    VERSION: 12u
+
+export-10u-switch-plate:
+  extends: .export-switch-plate
+  variables:
+    VERSION: 10u
+
+.export-bottom-plate:
   image: docker.io/setsoft/kicad_auto:dev_k6
   stage: export
   script:
-    - cd bottom
+    - cd ${VERSION}/bottom
     - kibot -vvv
   artifacts:
     paths:
-      - bottom/revxlp_bottom-Edge_Cuts.dxf
-      - bottom/JLCPCB/revxlp_bottom-JLCPCB*.zip
-      - bottom/JLCPCB/revxlp_bottom-NPTH.drl
-      - bottom/revxlp_bottom_*.csv
+      - ${VERSION}/bottom/revxlp_bottom-Edge_Cuts.dxf
+      - ${VERSION}/bottom/JLCPCB/revxlp_bottom-JLCPCB*.zip
+      - ${VERSION}/bottom/JLCPCB/revxlp_bottom-NPTH.drl
+      - ${VERSION}/bottom/revxlp_bottom_*.csv
 
-generate-3dp-case:
+export-12u-bottom-plate:
+  extends: .export-bottom-plate
+  variables:
+    VERSION: 12u
+
+export-10u-bottom-plate:
+  extends: .export-bottom-plate
+  variables:
+    VERSION: 10u
+
+.generate-3dp-case:
   image: cadquery/cadquery
   stage: generate
 
   script:
-    - ./plate-case-export.py
-    - ./plate-case-export.py --feature base
-    - ./plate-case-export.py --feature logo
-    - ./plate-case-export.py --feature button_cutouts
+    - ./plate-case-export.py ${VERSION}
+    - ./plate-case-export.py ${VERSION} --feature base
+    - ./plate-case-export.py ${VERSION} --feature logo
+    - ./plate-case-export.py ${VERSION} --feature button_cutouts
 
   artifacts:
     paths:
       - "*.step"
       - "*.stl"
 
-generate-case-foam:
+generate-12u-3dp-case:
+  extends: .generate-3dp-case
+  variables:
+    VERSION: 12u
+
+generate-10u-3dp-case:
+  extends: .generate-3dp-case
+  variables:
+    VERSION: 10u
+
+.generate-case-foam:
   image: python:3-alpine
   stage: generate
   needs:
-    - export-bottom-plate
-    - export-pcb
+    - export-${VERSION}-bottom-plate
+    - export-${VERSION}-pcb
 
   before_script:
     - pip install ezdxf
 
   script:
-    - ./case-foam-dxf-merge.py
+    - ./case-foam-dxf-merge.py ${VERSION}
 
   artifacts:
     paths:
-      - "revxlp-case-foam.dxf"
+      - "revxlp-${VERSION}-case-foam.dxf"

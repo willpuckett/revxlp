@@ -5,11 +5,12 @@
 
 ![revxlp with case](revxlp-with-case.jpg)
 
-The revxlp is a 41/42 key low profile (choc v1), unibody split, keyboard, supporting hotswap sockets, two thumb layouts, and single color backlight per-key LEDs. It is a remix of the amazing [revlp](https://github.com/cyril279/keyboards/tree/main/revlp) by Cyril, who created it off the original [reviung41](https://github.com/gtips/reviung/tree/master/reviung41) by gtips.
+The revxlp, available in 10u or 12u versions, is a low profile (choc v1), unibody split, keyboard, supporting hotswap sockets, two thumb layouts, and single color backlight per-key LEDs. It is a remix of the amazing [revlp](https://github.com/cyril279/keyboards/tree/main/revlp) by Cyril, who created it off the original [reviung41](https://github.com/gtips/reviung/tree/master/reviung41) by gtips.
+
 
 ## Layouts
 
-The revxlp PCB supports 41 or 42 key layouts, with either a single 2u middle thumb, or dual 1u thumb keys.
+The revxlp 12u version has 41/42 keys, and the 10u version has 35/36 keys, depending on the thumb layout selected. Both versions require matching switch plates and bottom plate or case.
 
 ## Backlighting
 
@@ -93,7 +94,8 @@ When ordering, you'll want to use the following details:
 
 You'll need the following download:
 
-* [revxlp PCB Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/pcb/JLCPCB/revxlp-JLCPCB.zip?job=export-pcb)
+* [revxlp 10u PCB Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/pcb/JLCPCB/revxlp-JLCPCB.zip?job=export-10u-pcb)
+* [revxlp 12u PCB Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/pcb/JLCPCB/revxlp-JLCPCB.zip?job=export-12u-pcb)
 
 ### PCB Assembly (PCBA)
 
@@ -109,8 +111,12 @@ When ordering, select "Standard PCBA", Bottom side, and when prompted, upload th
 
 You'll need the following downloads:
 
-* [revxlp BOM](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/pcb/revxlp_bom_jlc.csv?job=export-pcb)
-* [revxlp pick & place](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/pcb/revxlp_cpl_jlc.csv?job=export-pcb)
+* 10u version
+  * [revxlp BOM](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/pcb/revxlp_bom_jlc.csv?job=export-10u-pcb)
+  * [revxlp pick & place](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/pcb/revxlp_cpl_jlc.csv?job=export-10u-pcb)
+* 12u version
+  * [revxlp BOM](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/pcb/revxlp_bom_jlc.csv?job=export-12u-pcb)
+  * [revxlp pick & place](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/pcb/revxlp_cpl_jlc.csv?job=export-12u-pcb)
 
 ## Switch Plate
 
@@ -122,8 +128,12 @@ The switch plate is exported two ways, one to be used for for JLC's Aluminum PCB
 
 You can download either
 
-* [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-switch-plate)
-* [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-switch-plate)
+* 10u version
+  * [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-10u-switch-plate)
+  * [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-10u-switch-plate)
+* 12u version
+  * [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-12u-switch-plate)
+  * [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-12u-switch-plate)
 
 ## Bottom Plate
 
@@ -135,8 +145,12 @@ The bottom plate can also be ordered in Aluminum or FR4. When ordering, use the 
 
 You can download either
 
-* [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-bottom-plate)
-* [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-bottom-plate)
+* 10u version
+  * [Aluminum Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-bottom-plate)
+  * [FR4 Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-bottom-plate)
+* 12u version
+  * [Aluminum Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-bottom-plate)
+  * [FR4 Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-bottom-plate)
 
 ## 3DP Bottom Case
 
@@ -147,10 +161,16 @@ The 3DP bottom case is designed to work with the switch plate, and has a few opt
  
 Cases can be printed yourself, or ordered through an online service, including JLC if also getting PCBs/plates ordered. They are generated using CadQuery, and are available as STEP or STL files.
 
-* `all` variant, includes logo and button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.stl?job=generate-3dp-case)
-* `logo` variant, includes logo, but *NO* button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.stl?job=generate-3dp-case)
-* `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.stl?job=generate-3dp-case)
-* `base` variant, *NO* button cutouts, nor logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_base.step?job=generate-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_base.stl?job=generate-3dp-case)
+* 10u version
+  * `all` variant, includes logo and button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_10u_all.step?job=generate-10u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.stl?job=generate-10u-3dp-case)
+  * `logo` variant, includes logo, but *NO* button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_10u_logo.step?job=generate-10u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.stl?job=generate-10u-3dp-case)
+  * `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_10u_button_cutouts.step?job=generate-10u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.stl?job=generate-10u-3dp-case)
+  * `base` variant, *NO* button cutouts, nor logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_10u_base.step?job=generate-10u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_base.stl?job=generate-10u-3dp-case)
+* 12u version
+  * `all` variant, includes logo and button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_12u_all.step?job=generate-12u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_all.stl?job=generate-12u-3dp-case)
+  * `logo` variant, includes logo, but *NO* button cutouts: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_12u_logo.step?job=generate-12u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_logo.stl?job=generate-12u-3dp-case)
+  * `button_cutouts` variant, includes button cutouts, but *NO* logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_12u_button_cutouts.step?job=generate-12u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_button_cutouts.stl?job=generate-12u-3dp-case)
+  * `base` variant, *NO* button cutouts, nor logo: [STEP](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_12u_base.step?job=generate-12u-3dp-case)/[STL](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/revxlp_case_base.stl?job=generate-12u-3dp-case)
 
 # Build Guide
 
@@ -187,6 +207,7 @@ If you've not previously done any soldering, Adafruit has a great [guide to exce
 ## Build Steps
 
 Skip any of the following steps if they do not apply to your build.
+
 ### Diodes
 
 The SMD diodes should be installed first. The diodes are all located on the back of the PCB and are all marked with a `D_` prefix. The steps are as follows.
@@ -332,6 +353,7 @@ Now that everything is fully assembled, it's time to install the case/bottom pla
 1. Torn over the PCB & switch plate assembly.
 2. Align the bottom plate over the solder nuts.
 3. Insert and gently tighten the M2 screws through the bottom plate into the solder nuts of the PCB
+
 ## Firmware
 
 Latest firmware can be found at https://github.com/petejohanson/revxlp-config

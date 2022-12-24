@@ -5,7 +5,9 @@ import csv
 
 file_dir = os.environ.get("REVXLP_DIR") or os.getcwd()
 
-assembly_generation = True
+design_size = '10u'
+
+assembly_generation = False
 
 plate_thickness = 2
 pcb_wiggle_room = 0.25
@@ -39,6 +41,9 @@ feature_button_cutouts = True
 feature_chamfer_outside = False
 feature_fillet_outside = True
 
+feature_chamfer_inside = False
+feature_fillet_inside = True
+
 feature_bumpon_insets = True
 
 def generate_solder_nut(height):
@@ -51,23 +56,23 @@ def generate_solder_nut(height):
     return nut
 
 def pcb_step():
-    return cq.importers.importStep(f'{file_dir}/pcb/revxlp.step')
+    return cq.importers.importStep(f'{file_dir}/{design_size}/pcb/revxlp-3D.step')
 
 def plate_pcb_step():
-    return cq.importers.importStep(f'{file_dir}/plate/revxlp_plate.step')
+    return cq.importers.importStep(f'{file_dir}/{design_size}/plate/revxlp_plate-3D.step')
 
 def pnp_locations():
-    with open(f"{file_dir}/pcb/revxlp_cpl_jlc.csv") as file:
+    with open(f"{file_dir}/{design_size}/pcb/revxlp_cpl_jlc.csv") as file:
         reader = csv.DictReader(file)
         return dict([(x['Designator'],x) for x in reader])
 
 def bottom_pnp_locations():
-    with open(f"{file_dir}/bottom/revxlp_bottom_cpl_jlc.csv") as file:
+    with open(f"{file_dir}/{design_size}/bottom/revxlp_bottom_cpl_jlc.csv") as file:
         reader = csv.DictReader(file)
         return dict([(x['Designator'],x) for x in reader])
 
 def drill_points():
-    file = open(f"{file_dir}/bottom/JLCPCB/revxlp_bottom-NPTH.drl", 'r')
+    file = open(f"{file_dir}/{design_size}/bottom/JLCPCB/revxlp_bottom-NPTH.drl", 'r')
     regex = re.compile("^X(-?\d+.\d+)Y(-?\d+.\d+)")
     return [(float(m.group(1)), float(m.group(2))) for l in file.readlines() for m in [regex.search(l)] if m]
 
@@ -76,7 +81,7 @@ def edge_cut_sketch():
 
 def edge_cuts():
     return (
-        cq.importers.importDXF(f"{file_dir}/bottom/revxlp_bottom-Edge_Cuts.dxf", tol=0.05)
+        cq.importers.importDXF(f"{file_dir}/{design_size}/bottom/revxlp_bottom-Edge_Cuts.dxf", tol=0.05)
         .wires()
         .toPending()
     )
@@ -94,7 +99,7 @@ def logo_text_dxf():
         .wires()
         .toPending()
     )
-    
+
 core_body = edge_cuts().offset2D(plate_thickness + pcb_wiggle_room, 'intersection').extrude(interior_height + plate_thickness)
 
 if feature_chamfer_outside:
@@ -105,9 +110,9 @@ elif feature_fillet_outside:
 huller = edge_cuts().offset2D(pcb_wiggle_room).extrude(interior_height + 1).translate([0,0,plate_thickness])
 body = core_body.cut(huller)
 
-if feature_chamfer_outside:
+if feature_chamfer_inside:
     body = body.faces(">Z[-2]").chamfer(plate_thickness * 0.5)
-elif feature_fillet_outside:
+elif feature_fillet_inside:
     body = body.faces(">Z[-2]").fillet(plate_thickness * 0.5)
 
 body.faces(">Z[-2]").tag("interior_bottom")
