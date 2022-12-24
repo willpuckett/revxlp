@@ -76,6 +76,7 @@ export-10u-bottom-plate:
     - ./plate-case-export.py ${VERSION} --feature base
     - ./plate-case-export.py ${VERSION} --feature logo
     - ./plate-case-export.py ${VERSION} --feature button_cutouts
+    - ./plate-case-export.py ${VERSION} --feature cnc --feature button_cutouts
 
   artifacts:
     paths:
