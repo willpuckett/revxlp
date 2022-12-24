@@ -55,7 +55,21 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "clearance|108390563|69012824|d86c678a-4413-4b69-9580-f4b916f7bdee|97dd75f9-92dc-4921-9e54-e50a9ffcea55",
+        "clearance|114531225|66159098|5b6ff197-f34d-467c-9d97-c9a26d0e7f21|577aa050-a5ca-4b15-bb4c-f8fcb8b3154d",
+        "clearance|122335461|124294906|5a580e68-9cf2-4ced-8f76-d827a5c70205|efc6d86b-de74-4b10-a19d-55a5c94d4820",
+        "clearance|122717244|123951883|efc6d86b-de74-4b10-a19d-55a5c94d4820|e819584c-39da-4464-8afb-89b18c2b9783",
+        "clearance|128126568|126692135|5ddb0142-222c-493a-a0a3-e9ad3a074eef|b7eeba10-2365-473a-aa2a-69c555e86470",
+        "clearance|130822348|126391817|55e2a3fd-d413-48e5-8039-07b3ef568db5|82f10ad6-8e3c-46f0-b19c-2a9b04aea5b7",
+        "clearance|136548324|82551968|dbdbd871-18e9-4ae7-ae83-a85b053ca249|89d8e286-245b-4a2f-8212-b2358c3c0d9e",
+        "clearance|137774066|82343723|8730b2da-88b7-4a4f-941b-219b76d6c6e8|1306d0d0-0063-44d6-8732-73673f48a377",
+        "clearance|137782427|128906218|caffd80d-6211-4f31-b1bd-7fc7c7ec7f6a|0edb769f-be66-43b9-b369-3e87de97bfcf",
+        "clearance|137905371|128463075|0067b846-7a1b-4e1a-bd06-99e86136193c|55e2a3fd-d413-48e5-8039-07b3ef568db5",
+        "copper_edge_clearance|193857282|84546942|626173ef-4e28-4d17-aa5e-4670ec237b76|89425f15-3112-421c-a1d2-64c4858a2643",
+        "copper_edge_clearance|72164086|121403989|a25cb4ac-241b-4eeb-9043-470218523afd|59d4de9d-d704-4543-b06c-75184bc7422a",
+        "hole_clearance|120028138|142509724|aa400535-a593-4283-ba63-3af1ff2789a1|0840cb20-6090-49b8-88da-59519698a721"
+      ],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -384,8 +398,7 @@
           "+5V",
           "BAT+",
           "GND",
-          "Net-(BT1-Pad2)",
-          "Net-(JP1-Pad3)"
+          "Net-(BT1-Pad2)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
