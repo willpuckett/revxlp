@@ -134,8 +134,8 @@ The bottom plate can also be ordered in Aluminum or FR4. When ordering, use the 
 
 You can download either
 
-* [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_Alu.zip?job=export-bottom-plate)
-* [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/plate/JLCPCB/revxlp_plate-JLCPCB_FR4.zip?job=export-bottom-plate)
+* [Aluminum Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-bottom-plate)
+* [FR4 Switch Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-bottom-plate)
 
 ## 3DP Bottom Case
 
