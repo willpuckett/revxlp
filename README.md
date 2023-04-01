@@ -212,9 +212,19 @@ The shift register is the hardest component to solder. It is recommended to use 
 8. Check for any bridges between adjacent pins, or pins without solder on them. If necessary, reflow/drag again. You may need to use more flux, or if *way* too much solder, use some solder wick to remove the excess.
 9. Take a deep breath, and celebrate your success.
 
-### Resistors and LEDs
+### Backlight Resistors and LEDs
 
 Use the same technique used to solder the diodes to solder the resistors to all the footprints with a `R_` prefix on the bottom of the PCB, and then again for the LEDs to each footprint on the top of the PCB for each switch.
+
+### Backlight MOSFET and pull-down resistor
+
+`Q1` and `R80` are the two control components for the backlight hardware. First, solder the `Q1` mosfet with the same general technique:
+
+1. Tin one pad of the `Q1` footprint with solder.
+1. Carefully place the SOT-23 component in place, then reflow the tinned pad to secure it. Be sure to check the alignment of the other two legs, and reflow/adjust the placement as needed before soldering the rest.
+1. Once properly aligned, apply solder to the other two legs of the MOSFET.
+
+Repeat the same procedure with the bias resistor `R80` next to `Q1`.
 
 ### Switch Sockets
 
