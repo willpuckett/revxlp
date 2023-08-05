@@ -4,7 +4,7 @@ stages:
 
 .export-pcb:
   stage: export
-  image: docker.io/setsoft/kicad_auto:dev_k6
+  image: ghcr.io/inti-cmnb/kicad7_auto:latest
   script:
     - cd ${VERSION}/pcb
     - kibot -vvv
@@ -25,7 +25,7 @@ export-10u-pcb:
     VERSION: 10u
 
 .export-switch-plate:
-  image: docker.io/setsoft/kicad_auto:dev_k6
+  image: ghcr.io/inti-cmnb/kicad7_auto:latest
   stage: export
   script:
     - cd ${VERSION}/plate
@@ -45,7 +45,7 @@ export-10u-switch-plate:
     VERSION: 10u
 
 .export-bottom-plate:
-  image: docker.io/setsoft/kicad_auto:dev_k6
+  image: ghcr.io/inti-cmnb/kicad7_auto:latest
   stage: export
   script:
     - cd ${VERSION}/bottom
