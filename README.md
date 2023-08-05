@@ -14,7 +14,7 @@ The revxlp 12u version has 41/42 keys, and the 10u version has 35/36 keys, depen
 
 ## Backlighting
 
-Single color LED backlighting is supported. It does *NOT* support per-key RGB. If building yourself, choose the color PLL-2 LED you want to use, and calculate the desired resistor value based on the LED forward voltage and current.
+Single color LED backlighting is supported. On the 10u version, the backlight system can be used also for bottom facing LEDs, either in addition to, or instead of the per-key single color LEDs. It does *NOT* support per-key RGB. If building yourself, choose the color PLL-2 LED you want to use, and calculate the desired resistor value based on the LED forward voltage and current.
 
 A jumper on the back of the PCB needs to be jumped, depending on if you want to power the LEDs from the raw 5v from USB, or the regulated 3.3v power source. For a build using the XIAO BLE, you might want to consider, this carefully; bridging to the 5v source means the LEDs will automatically be cut from power when USB is unplugged. If using 3.3v, you will likely deplete the tiny LiPo battery quickly w/ LEDs on *anyways*.
 
