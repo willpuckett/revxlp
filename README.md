@@ -146,11 +146,11 @@ The bottom plate can also be ordered in Aluminum or FR4. When ordering, use the 
 You can download either
 
 * 10u version
-  * [Aluminum Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-bottom-plate)
-  * [FR4 Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-bottom-plate)
+  * [Aluminum Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-10u-bottom-plate)
+  * [FR4 Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/10u/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-10u-bottom-plate)
 * 12u version
-  * [Aluminum Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-bottom-plate)
-  * [FR4 Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-bottom-plate)
+  * [Aluminum Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/bottom/JLCPCB/revxlp_bottom-JLCPCB_Alu.zip?job=export-12u-bottom-plate)
+  * [FR4 Bottom Plate Gerbers](https://gitlab.com/lpgalaxy/revxlp/-/jobs/artifacts/main/raw/12u/bottom/JLCPCB/revxlp_bottom-JLCPCB_FR4.zip?job=export-12u-bottom-plate)
 
 ## 3DP Bottom Case
 
