@@ -4,6 +4,13 @@
 kibot:
   version: 1
 
+preflight:
+  erc: true
+  drc: 
+    enabled: true
+    ignore_unconnected: false
+  fill_zones: true
+
 filters:
   - name: fix_rotation
     comment: 'Adjust rotation for JLC'
@@ -45,6 +52,12 @@ filters:
       - column: 'FP'
         regex: 'fiducial'
 
+  - name: variant_rename
+    comment: Process footprint replacements
+    type: var_rename
+    separator: ':'
+    variant_to_value: false
+
 variants:
   - name: rotated
     comment: 'Just a place holder for the rotation filter'
@@ -52,6 +65,36 @@ variants:
     variant: rotated
     pre_transform: fix_rotation
     exclude_filter: mechanical_fixed
+  - name: top
+    comment: 'Top Plate'
+    type: kibom
+    variant: top
+    file_id: top
+    pre_transform: variant_rename
+  - name: bottom
+    comment: 'Bottom Plate'
+    type: kibom
+    variant: bottom
+    file_id: bottom
+    pre_transform: variant_rename
+  - name: 10u
+    comment: '10u PCB'
+    type: kibom
+    variant: 10u
+    file_id: 10u
+    pre_transform: variant_rename
+  - name: 10u-top
+    comment: '10u Top Plate'
+    type: kibom
+    variant: 10u-top
+    file_id: 10u-top
+    pre_transform: variant_rename
+  - name: 10u-bottom
+    comment: '10u Bottom Plate'
+    type: kibom
+    variant: 10u-bottom
+    file_id: 10u-bottom
+    pre_transform: variant_rename
 
 outputs:
   - name: CaseFoam_DXF
@@ -63,6 +106,12 @@ outputs:
       use_aux_axis_as_origin: true
     layers:
        - User.Eco1
+
+  - name: variant_PCB
+    comment: 'PCB with variant'
+    type: pcb_variant
+    options:
+      output: '%f_%v.%x'
 
   - name: JLCPCB_gerbers
     comment: Gerbers compatible with JLCPCB

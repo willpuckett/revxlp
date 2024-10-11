@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name "keeblib")(type "Legacy")(uri "${KIPRJMOD}/../../revxlp.pretty/keeblib.lib")(options "")(descr ""))
-  (lib (name "revxlp")(type "Legacy")(uri "${KIPRJMOD}/revxlp.lib")(options "")(descr ""))
-  (lib (name "Seeeduino XIAO")(type "KiCad")(uri "${KIPRJMOD}/Seeeduino XIAO.kicad_sym")(options "")(descr ""))
-)
