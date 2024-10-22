@@ -10345,7 +10345,7 @@
 				(hide yes)
 			)
 		)
-		(property "10u:Footprint" "revxlp:cell_pads"
+		(property "10u:Footprint" ""
 			(at 269.24 149.86 0)
 			(effects
 				(font

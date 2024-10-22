@@ -2,4 +2,6 @@ revxlp_bom_jlc.csv
 revxlp_cpl_jlc.csv
 revxlp*.dxf
 JLCPCB/
+default/
+
 .DS_Store
